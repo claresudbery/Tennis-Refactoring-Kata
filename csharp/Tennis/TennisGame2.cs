@@ -20,6 +20,13 @@ namespace Tennis
         public string GetScore()
         {
             var score = "";
+            score = Temp();
+            return score;
+        }
+
+        private string Temp()
+        {
+            var score = "";
             if (p1point == p2point && p1point < 3)
             {
                 if (p1point == 0)
@@ -30,6 +37,7 @@ namespace Tennis
                     score = "Thirty";
                 score += "-All";
             }
+
             if (p1point == p2point && p1point > 2)
                 score = "Deuce";
 
@@ -45,6 +53,7 @@ namespace Tennis
                 p2res = "Love";
                 score = p1res + "-" + p2res;
             }
+
             if (p2point > 0 && p1point == 0)
             {
                 if (p2point == 1)
@@ -70,6 +79,7 @@ namespace Tennis
                     p2res = "Thirty";
                 score = p1res + "-" + p2res;
             }
+
             if (p2point > p1point && p2point < 4)
             {
                 if (p2point == 2)
@@ -97,10 +107,12 @@ namespace Tennis
             {
                 score = "Win for player1";
             }
+
             if (p2point >= 4 && p1point >= 0 && (p2point - p1point) >= 2)
             {
                 score = "Win for player2";
             }
+
             return score;
         }
 
