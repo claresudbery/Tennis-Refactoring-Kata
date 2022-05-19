@@ -26,7 +26,94 @@ namespace Tennis
             }
             else
             {
-                score = Temp();   
+                var score1 = "";
+                if (p1point == p2point && p1point < 3)
+                {
+                    if (p1point == 0)
+                        score1 = "Love";
+                    if (p1point == 1)
+                        score1 = "Fifteen";
+                    if (p1point == 2)
+                        score1 = "Thirty";
+                    score1 += "-All";
+                }
+
+                if (p1point == p2point && p1point > 2)
+                    score1 = "Deuce";
+
+                if (p1point > 0 && p2point == 0)
+                {
+                    if (p1point == 1)
+                        p1res = "Fifteen";
+                    if (p1point == 2)
+                        p1res = "Thirty";
+                    if (p1point == 3)
+                        p1res = "Forty";
+
+                    p2res = "Love";
+                    score1 = p1res + "-" + p2res;
+                }
+
+                if (p2point > 0 && p1point == 0)
+                {
+                    if (p2point == 1)
+                        p2res = "Fifteen";
+                    if (p2point == 2)
+                        p2res = "Thirty";
+                    if (p2point == 3)
+                        p2res = "Forty";
+
+                    p1res = "Love";
+                    score1 = p1res + "-" + p2res;
+                }
+
+                if (p1point > p2point && p1point < 4)
+                {
+                    if (p1point == 2)
+                        p1res = "Thirty";
+                    if (p1point == 3)
+                        p1res = "Forty";
+                    if (p2point == 1)
+                        p2res = "Fifteen";
+                    if (p2point == 2)
+                        p2res = "Thirty";
+                    score1 = p1res + "-" + p2res;
+                }
+
+                if (p2point > p1point && p2point < 4)
+                {
+                    if (p2point == 2)
+                        p2res = "Thirty";
+                    if (p2point == 3)
+                        p2res = "Forty";
+                    if (p1point == 1)
+                        p1res = "Fifteen";
+                    if (p1point == 2)
+                        p1res = "Thirty";
+                    score1 = p1res + "-" + p2res;
+                }
+
+                if (p1point > p2point && p2point >= 3)
+                {
+                    score1 = "Advantage player1";
+                }
+
+                if (p2point > p1point && p1point >= 3)
+                {
+                    score1 = "Advantage player2";
+                }
+
+                if (p1point >= 4 && p2point >= 0 && (p1point - p2point) >= 2)
+                {
+                    score1 = "Win for player1";
+                }
+
+                if (p2point >= 4 && p1point >= 0 && (p2point - p1point) >= 2)
+                {
+                    score1 = "Win for player2";
+                }
+
+                score = score1;
             }
             return score;
         }
