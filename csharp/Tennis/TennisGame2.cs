@@ -20,7 +20,14 @@ namespace Tennis
         public string GetScore()
         {
             var score = "";
-            score = Temp();
+            if (p1point > p2point)
+            {
+                score = Temp();
+            }
+            else
+            {
+                score = Temp();   
+            }
             return score;
         }
 
