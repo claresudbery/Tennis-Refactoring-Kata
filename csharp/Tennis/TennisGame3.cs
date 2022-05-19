@@ -15,19 +15,38 @@ namespace Tennis
 
         public string GetScore()
         {
-            if ((_player1Points < 4 && _player2Points < 4) && (_player1Points + _player2Points < 6))
+            if (InMiddleOfGame())
             {
-                string[] p = { "Love", "Fifteen", "Thirty", "Forty" };
-                return (_player1Points == _player2Points) ? p[_player1Points] + "-All" : p[_player1Points] + "-" + p[_player2Points];
+                return GetMidGameScore();
             }
             else
             {
-                string s;
-                if (_player1Points == _player2Points)
-                    return "Deuce";
-                s = _player1Points > _player2Points ? _player1Name : _player2Name;
-                return ((_player1Points - _player2Points) * (_player1Points - _player2Points) == 1) ? "Advantage " + s : "Win for " + s;
+                return GetDeuceOrAdvantageOrWinScore();
             }
+        }
+
+        private string GetDeuceOrAdvantageOrWinScore()
+        {
+            string s;
+            if (_player1Points == _player2Points)
+                return "Deuce";
+            s = _player1Points > _player2Points ? _player1Name : _player2Name;
+            return ((_player1Points - _player2Points) * (_player1Points - _player2Points) == 1)
+                ? "Advantage " + s
+                : "Win for " + s;
+        }
+
+        private string GetMidGameScore()
+        {
+            string[] p = { "Love", "Fifteen", "Thirty", "Forty" };
+            return (_player1Points == _player2Points)
+                ? p[_player1Points] + "-All"
+                : p[_player1Points] + "-" + p[_player2Points];
+        }
+
+        private bool InMiddleOfGame()
+        {
+            return (_player1Points < 4 && _player2Points < 4) && (_player1Points + _player2Points < 6);
         }
 
         public void WonPoint(string playerName)
