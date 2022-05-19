@@ -67,19 +67,6 @@ namespace Tennis
                     score1 = p1res + "-" + p2res;
                 }
 
-                if (false && p1point < 4)
-                {
-                    if (p1point == 2)
-                        p1res = "Thirty";
-                    if (p1point == 3)
-                        p1res = "Forty";
-                    if (p2point == 1)
-                        p2res = "Fifteen";
-                    if (p2point == 2)
-                        p2res = "Thirty";
-                    score1 = p1res + "-" + p2res;
-                }
-
                 if (p2point > p1point && p2point < 4)
                 {
                     if (p2point == 2)
@@ -91,11 +78,6 @@ namespace Tennis
                     if (p1point == 2)
                         p1res = "Thirty";
                     score1 = p1res + "-" + p2res;
-                }
-
-                if (false && p2point >= 3)
-                {
-                    score1 = "Advantage player1";
                 }
 
                 if (p2point > p1point && p1point >= 3)
