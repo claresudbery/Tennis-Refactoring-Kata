@@ -2,6 +2,8 @@ namespace Tennis
 {
     public class TennisGame2 : ITennisGame
     {
+        private bool _is_pinklish;
+
         private int p1point;
         private int p2point;
 
@@ -10,8 +12,10 @@ namespace Tennis
         private string player1Name;
         private string player2Name;
 
-        public TennisGame2(string player1Name, string player2Name)
+        public TennisGame2(string player1Name, string player2Name, bool isPinklish = false)
         {
+            _is_pinklish = isPinklish;
+
             this.player1Name = player1Name;
             p1point = 0;
             this.player2Name = player2Name;
