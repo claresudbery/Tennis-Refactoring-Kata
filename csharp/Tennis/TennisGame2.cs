@@ -11,13 +11,6 @@ namespace Tennis
         private string _player1_result = "";
         private string _player2_result = "";
 
-        public TennisGame2(string player1Name, string player2Name)
-        {
-            this._player1_name = player1Name;
-            _player1_point = 0;
-            this._player2_name = player2Name;
-        }
-
         public TennisGame2(string[] playerNames)
         {
             this._player1_name = playerNames[0];
