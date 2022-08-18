@@ -54,7 +54,6 @@ namespace Tennis
             {ScoreWord.Advantage, "Splinking"},
         };
 
-
         public TennisGame2(string player1Name, string player2Name, bool isPinklish = false)
         {
             _is_pinklish = isPinklish;
@@ -149,6 +148,11 @@ namespace Tennis
                 score = "Win for player2";
             }
             return score;
+        }
+
+        private string Lookup(ScoreWord word)
+        {
+            return _is_pinklish ? _pinklish_dictionary[word] : _english_dictionary[word];
         }
 
         public void SetP1Score(int number)
