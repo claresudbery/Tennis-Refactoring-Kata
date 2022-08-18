@@ -104,11 +104,11 @@ namespace Tennis.Tests
         }
 
         [Theory]
-        [ClassData(typeof(TestDataGenerator1))]
-        public void Tennis2Test(int p1, int p2, string expected)
+        [ClassData(typeof(TestDataGenerator2))]
+        public void Tennis2Test(int p1, int p2, string expectedEnglish, string expectedPinklish)
         {
             var game = new TennisGame2("player1", "player2");
-            CheckAllScores(game, p1, p2, expected);
+            CheckAllScores(game, p1, p2, expectedEnglish);
         }
 
         [Theory]
