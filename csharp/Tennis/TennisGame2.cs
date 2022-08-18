@@ -43,7 +43,7 @@ namespace Tennis
 
         private Dictionary<ScoreWord, string> _pinklish_dictionary = new Dictionary<ScoreWord, string>()
         {
-            {ScoreWord.Love,      "Love"},
+            {ScoreWord.Love,      "Like"},
             {ScoreWord.All,       "All"},
             {ScoreWord.Fifteen,   "Fifteen"},
             {ScoreWord.Thirty,    "Thirty"},
