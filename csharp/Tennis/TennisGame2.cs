@@ -20,7 +20,7 @@ namespace Tennis
 
         public void WonPoint(string player)
         {
-            if (player == "player1")
+            if (player == _player1_name)
                 P1Score();
             else
                 P2Score();
@@ -94,21 +94,21 @@ namespace Tennis
 
             if (_player1_points > _player2_points && _player2_points >= 3)
             {
-                score = "Advantage player1";
+                score = $"Advantage {_player1_name}";
             }
 
             if (_player2_points > _player1_points && _player1_points >= 3)
             {
-                score = "Advantage player2";
+                score = $"Advantage {_player2_name}";
             }
 
             if (_player1_points >= 4 && _player2_points >= 0 && (_player1_points - _player2_points) >= 2)
             {
-                score = "Win for player1";
+                score = $"Win for {_player1_name}";
             }
             if (_player2_points >= 4 && _player1_points >= 0 && (_player2_points - _player1_points) >= 2)
             {
-                score = "Win for player2";
+                score = $"Win for {_player2_name}";
             }
             return score;
         }
