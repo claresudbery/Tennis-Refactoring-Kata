@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Tennis.Tests
 {
-    public class TestDataGenerator1 : IEnumerable<object[]>
+    public class DefaultTestDataGenerator : IEnumerable<object[]>
     {
         private readonly List<object[]> _data = new List<object[]>
         {
@@ -49,7 +49,7 @@ namespace Tennis.Tests
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 
-    public class TestDataGenerator2 : IEnumerable<object[]>
+    public class PinklishTestDataGenerator : IEnumerable<object[]>
     {
         private readonly List<object[]> _data = new List<object[]>
         {
@@ -96,7 +96,7 @@ namespace Tennis.Tests
     public class TennisTests
     {
         [Theory]
-        [ClassData(typeof(TestDataGenerator1))]
+        [ClassData(typeof(DefaultTestDataGenerator))]
         public void Tennis1Test(int p1, int p2, string expected)
         {
             var game = new TennisGame1("player1", "player2");
@@ -104,7 +104,7 @@ namespace Tennis.Tests
         }
 
         [Theory]
-        [ClassData(typeof(TestDataGenerator2))]
+        [ClassData(typeof(PinklishTestDataGenerator))]
         public void Tennis2Test_English(int p1, int p2, string expectedEnglish, string expectedPinklish)
         {
             var game = new TennisGame2("player1", "player2");
@@ -112,7 +112,7 @@ namespace Tennis.Tests
         }
 
         [Theory]
-        [ClassData(typeof(TestDataGenerator2))]
+        [ClassData(typeof(PinklishTestDataGenerator))]
         public void Tennis2Test_Pinklish(int p1, int p2, string expectedEnglish, string expectedPinklish)
         {
             var game = new TennisGame2("player1", "player2", isPinklish: true);
@@ -120,7 +120,7 @@ namespace Tennis.Tests
         }
 
         [Theory]
-        [ClassData(typeof(TestDataGenerator1))]
+        [ClassData(typeof(DefaultTestDataGenerator))]
         public void Tennis3Test(int p1, int p2, string expected)
         {
             var game = new TennisGame3("player1", "player2");
