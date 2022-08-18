@@ -7,7 +7,7 @@ namespace Tennis.Tests
 {
     public class TestDataGenerator : IEnumerable<object[]>
     {
-        public static string Player1Name = "player1";
+        public static string Player1Name = "Player 1";
         public static string Player2Name = "player2";
 
         private readonly List<object[]> _data = new List<object[]>
@@ -58,7 +58,7 @@ namespace Tennis.Tests
         [ClassData(typeof(TestDataGenerator))]
         public void Tennis1Test(int p1, int p2, string expected)
         {
-            var game = new TennisGame1("player1", "player2");
+            var game = new TennisGame1(TestDataGenerator.Player1Name, TestDataGenerator.Player2Name);
             CheckAllScores(game, p1, p2, expected);
         }
 
@@ -74,7 +74,7 @@ namespace Tennis.Tests
         [ClassData(typeof(TestDataGenerator))]
         public void Tennis3Test(int p1, int p2, string expected)
         {
-            var game = new TennisGame3("player1", "player2");
+            var game = new TennisGame3(TestDataGenerator.Player1Name, TestDataGenerator.Player2Name);
             CheckAllScores(game, p1, p2, expected);
         }
 
@@ -84,9 +84,9 @@ namespace Tennis.Tests
             for (var i = 0; i < highestScore; i++)
             {
                 if (i < player1Score)
-                    game.WonPoint("player1");
+                    game.WonPoint(TestDataGenerator.Player1Name);
                 if (i < player2Score)
-                    game.WonPoint("player2");
+                    game.WonPoint(TestDataGenerator.Player2Name);
             }
 
             Assert.Equal(expectedScore, game.GetScore());
