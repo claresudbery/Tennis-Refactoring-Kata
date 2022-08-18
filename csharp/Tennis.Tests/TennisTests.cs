@@ -7,7 +7,7 @@ namespace Tennis.Tests
 {
     public class TestDataGenerator : IEnumerable<object[]>
     {
-        public static string Player1Name = "Player 1";
+        public static string Player1Name = "player1";
         public static string Player2Name = "player2";
 
         private readonly List<object[]> _data = new List<object[]>

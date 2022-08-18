@@ -18,9 +18,16 @@ namespace Tennis
             this._player2_name = player2Name;
         }
 
+        public TennisGame2(string[] playerNames)
+        {
+            this._player1_name = playerNames[0];
+            _player1_point = 0;
+            this._player2_name = playerNames[1];
+        }
+
         public void WonPoint(string player)
         {
-            if (player == "player1")
+            if (player == _player1_name)
                 P1Score();
             else
                 P2Score();
@@ -94,21 +101,21 @@ namespace Tennis
 
             if (_player1_point > _player2_point && _player2_point >= 3)
             {
-                score = "Advantage player1";
+                score = $"Advantage {_player1_name}";
             }
 
             if (_player2_point > _player1_point && _player1_point >= 3)
             {
-                score = "Advantage player2";
+                score = $"Advantage {_player2_name}";
             }
 
             if (_player1_point >= 4 && _player2_point >= 0 && (_player1_point - _player2_point) >= 2)
             {
-                score = "Win for player1";
+                score = $"Win for {_player1_name}";
             }
             if (_player2_point >= 4 && _player1_point >= 0 && (_player2_point - _player1_point) >= 2)
             {
-                score = "Win for player2";
+                score = $"Win for {_player2_name}";
             }
             return score;
         }
