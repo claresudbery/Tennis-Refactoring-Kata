@@ -18,6 +18,13 @@ namespace Tennis
             this._player2_name = player2Name;
         }
 
+        public TennisGame2(string[] playerNames)
+        {
+            this._player1_name = playerNames[0];
+            _player1_points = 0;
+            this._player2_name = playerNames[1];
+        }
+
         public void WonPoint(string player)
         {
             if (player == _player1_name)
