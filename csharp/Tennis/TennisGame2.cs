@@ -7,14 +7,14 @@ namespace Tennis
 
         private string p1res = "";
         private string p2res = "";
-        private string player1Name;
-        private string player2Name;
+        private string _player1_name;
+        private string _player2_name;
 
         public TennisGame2(string player1Name, string player2Name)
         {
-            this.player1Name = player1Name;
+            this._player1_name = player1Name;
             p1point = 0;
-            this.player2Name = player2Name;
+            this._player2_name = player2Name;
         }
 
         public string GetScore()
