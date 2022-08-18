@@ -6,7 +6,7 @@ using Xunit;
 namespace Tennis.Tests
 {
     public class TestDataGenerator : IEnumerable<object[]>
-    {
+    {        
         private readonly List<object[]> _data = new List<object[]>
         {
             new object[] {0, 0, "Love-All"},
