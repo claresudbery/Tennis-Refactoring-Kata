@@ -30,28 +30,12 @@ namespace Tennis
 
         private Dictionary<ScoreWord, string> _english_dictionary = new Dictionary<ScoreWord, string>()
         {
-            {ScoreWord.Love,      "Love"},      
-            {ScoreWord.All,       "All"},      
-            {ScoreWord.Fifteen,   "Fifteen"},       
-            {ScoreWord.Thirty,    "Thirty"},    
-            {ScoreWord.Deuce,     "Deuce"},    
-            {ScoreWord.Forty,     "Forty"},     
-            {ScoreWord.Win,       "Win"},       
-            {ScoreWord.For,       "for"},       
-            {ScoreWord.Advantage, "Advantage"},
+            {ScoreWord.Love,      "Love"}
         };
 
         private Dictionary<ScoreWord, string> _pinklish_dictionary = new Dictionary<ScoreWord, string>()
         {
-            {ScoreWord.Love,      "Like"},
-            {ScoreWord.All,       "All"},
-            {ScoreWord.Fifteen,   "Fifteen"},
-            {ScoreWord.Thirty,    "Thirty"},
-            {ScoreWord.Deuce,     "Deuce"},
-            {ScoreWord.Forty,     "Forty"},
-            {ScoreWord.Win,       "Win"},
-            {ScoreWord.For,       "for"},
-            {ScoreWord.Advantage, "Advantage"},
+            {ScoreWord.Love,      "Like"}
         };
 
         public TennisGame2(string player1Name, string player2Name, bool isPinklish = false)
@@ -71,22 +55,22 @@ namespace Tennis
                 if (p1point == 0)
                     score = Lookup(ScoreWord.Love);
                 if (p1point == 1)
-                    score = Lookup(ScoreWord.Fifteen);
+                    score = "Fifteen";
                 if (p1point == 2)
-                    score = Lookup(ScoreWord.Thirty);
+                    score = "Thirty";
                 score += "-All";
             }
             if (p1point == p2point && p1point > 2)
-                score = Lookup(ScoreWord.Deuce);
+                score = "Deuce";
 
             if (p1point > 0 && p2point == 0)
             {
                 if (p1point == 1)
-                    p1res = Lookup(ScoreWord.Fifteen);
+                    p1res = "Fifteen";
                 if (p1point == 2)
-                    p1res = Lookup(ScoreWord.Thirty);
+                    p1res = "Thirty";
                 if (p1point == 3)
-                    p1res = Lookup(ScoreWord.Forty);
+                    p1res = "Forty";
 
                 p2res = Lookup(ScoreWord.Love);
                 score = p1res + "-" + p2res;
@@ -94,11 +78,11 @@ namespace Tennis
             if (p2point > 0 && p1point == 0)
             {
                 if (p2point == 1)
-                    p2res = Lookup(ScoreWord.Fifteen);
+                    p2res = "Fifteen";
                 if (p2point == 2)
-                    p2res = Lookup(ScoreWord.Thirty);
+                    p2res = "Thirty";
                 if (p2point == 3)
-                    p2res = Lookup(ScoreWord.Forty);
+                    p2res = "Forty";
 
                 p1res = Lookup(ScoreWord.Love);
                 score = p1res + "-" + p2res;
@@ -107,45 +91,45 @@ namespace Tennis
             if (p1point > p2point && p1point < 4)
             {
                 if (p1point == 2)
-                    p1res = Lookup(ScoreWord.Thirty);
+                    p1res = "Thirty";
                 if (p1point == 3)
-                    p1res = Lookup(ScoreWord.Forty);
+                    p1res = "Forty";
                 if (p2point == 1)
-                    p2res = Lookup(ScoreWord.Fifteen);
+                    p2res = "Fifteen";
                 if (p2point == 2)
-                    p2res = Lookup(ScoreWord.Thirty);
+                    p2res = "Thirty";
                 score = p1res + "-" + p2res;
             }
             if (p2point > p1point && p2point < 4)
             {
                 if (p2point == 2)
-                    p2res = Lookup(ScoreWord.Thirty);
+                    p2res = "Thirty";
                 if (p2point == 3)
-                    p2res = Lookup(ScoreWord.Forty);
+                    p2res = "Forty";
                 if (p1point == 1)
-                    p1res = Lookup(ScoreWord.Fifteen);
+                    p1res = "Fifteen";
                 if (p1point == 2)
-                    p1res = Lookup(ScoreWord.Thirty);
+                    p1res = "Thirty";
                 score = p1res + "-" + p2res;
             }
 
             if (p1point > p2point && p2point >= 3)
             {
-                score = $"{Lookup(ScoreWord.Advantage)} player1";
+                score = "Advantage player1";
             }
 
             if (p2point > p1point && p1point >= 3)
             {
-                score = $"{Lookup(ScoreWord.Advantage)} player2";
+                score = "Advantage player2";
             }
 
             if (p1point >= 4 && p2point >= 0 && (p1point - p2point) >= 2)
             {
-                score = $"{Lookup(ScoreWord.Win)} {Lookup(ScoreWord.For)} player1";
+                score = "Win for player1";
             }
             if (p2point >= 4 && p1point >= 0 && (p2point - p1point) >= 2)
             {
-                score = $"{Lookup(ScoreWord.Win)} {Lookup(ScoreWord.For)} player2";
+                score = "Win for player2";
             }
             return score;
         }
