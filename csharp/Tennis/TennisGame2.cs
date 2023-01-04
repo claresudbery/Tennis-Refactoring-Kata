@@ -2,102 +2,110 @@ namespace Tennis
 {
     public class TennisGame2 : ITennisGame
     {
-        private int p1point;
-        private int p2point;
-
-        private string p1res = "";
-        private string p2res = "";
         private string player1Name;
         private string player2Name;
+        private int player1point;
+        private int player2point;
+
+        private string player1result = "";
+        private string player2result = "";
 
         public TennisGame2(string player1Name, string player2Name)
         {
             this.player1Name = player1Name;
-            p1point = 0;
+            player1point = 0;
             this.player2Name = player2Name;
+        }
+
+        public void WonPoint(string player)
+        {
+            if (player == "player1")
+                P1Score();
+            else
+                P2Score();
         }
 
         public string GetScore()
         {
             var score = "";
-            if (p1point == p2point && p1point < 3)
+            if (player1point == player2point && player1point < 3)
             {
-                if (p1point == 0)
+                if (player1point == 0)
                     score = "Love";
-                if (p1point == 1)
+                if (player1point == 1)
                     score = "Fifteen";
-                if (p1point == 2)
+                if (player1point == 2)
                     score = "Thirty";
                 score += "-All";
             }
-            if (p1point == p2point && p1point > 2)
+            if (player1point == player2point && player1point > 2)
                 score = "Deuce";
 
-            if (p1point > 0 && p2point == 0)
+            if (player1point > 0 && player2point == 0)
             {
-                if (p1point == 1)
-                    p1res = "Fifteen";
-                if (p1point == 2)
-                    p1res = "Thirty";
-                if (p1point == 3)
-                    p1res = "Forty";
+                if (player1point == 1)
+                    player1result = "Fifteen";
+                if (player1point == 2)
+                    player1result = "Thirty";
+                if (player1point == 3)
+                    player1result = "Forty";
 
-                p2res = "Love";
-                score = p1res + "-" + p2res;
+                player2result = "Love";
+                score = player1result + "-" + player2result;
             }
-            if (p2point > 0 && p1point == 0)
+            if (player2point > 0 && player1point == 0)
             {
-                if (p2point == 1)
-                    p2res = "Fifteen";
-                if (p2point == 2)
-                    p2res = "Thirty";
-                if (p2point == 3)
-                    p2res = "Forty";
+                if (player2point == 1)
+                    player2result = "Fifteen";
+                if (player2point == 2)
+                    player2result = "Thirty";
+                if (player2point == 3)
+                    player2result = "Forty";
 
-                p1res = "Love";
-                score = p1res + "-" + p2res;
-            }
-
-            if (p1point > p2point && p1point < 4)
-            {
-                if (p1point == 2)
-                    p1res = "Thirty";
-                if (p1point == 3)
-                    p1res = "Forty";
-                if (p2point == 1)
-                    p2res = "Fifteen";
-                if (p2point == 2)
-                    p2res = "Thirty";
-                score = p1res + "-" + p2res;
-            }
-            if (p2point > p1point && p2point < 4)
-            {
-                if (p2point == 2)
-                    p2res = "Thirty";
-                if (p2point == 3)
-                    p2res = "Forty";
-                if (p1point == 1)
-                    p1res = "Fifteen";
-                if (p1point == 2)
-                    p1res = "Thirty";
-                score = p1res + "-" + p2res;
+                player1result = "Love";
+                score = player1result + "-" + player2result;
             }
 
-            if (p1point > p2point && p2point >= 3)
+            if (player1point > player2point && player1point < 4)
+            {
+                if (player1point == 2)
+                    player1result = "Thirty";
+                if (player1point == 3)
+                    player1result = "Forty";
+                if (player2point == 1)
+                    player2result = "Fifteen";
+                if (player2point == 2)
+                    player2result = "Thirty";
+                score = player1result + "-" + player2result;
+            }
+            if (player2point > player1point && player2point < 4)
+            {
+                if (player2point == 2)
+                    player2result = "Thirty";
+                if (player2point == 3)
+                    player2result = "Forty";
+                if (player1point == 1)
+                    player1result = "Fifteen";
+                if (player1point == 2)
+                    player1result = "Thirty";
+                score = player1result + "-" + player2result;
+            }
+
+            if (player1point > player2point && player2point >= 3)
             {
                 score = "Advantage player1";
             }
 
-            if (p2point > p1point && p1point >= 3)
+            if (player2point > player1point && player1point >= 3)
             {
                 score = "Advantage player2";
             }
 
-            if (p1point >= 4 && p2point >= 0 && (p1point - p2point) >= 2)
+            if (player1point >= 4 && player2point >= 0 && (player1point - player2point) >= 2)
             {
                 score = "Win for player1";
             }
-            if (p2point >= 4 && p1point >= 0 && (p2point - p1point) >= 2)
+            if (player2point >= 4 && player1point >= 0 && (player2point - player1point) >= 2)
             {
                 score = "Win for player2";
             }
@@ -122,22 +130,13 @@ namespace Tennis
 
         private void P1Score()
         {
-            p1point++;
+            player1point++;
         }
 
         private void P2Score()
         {
-            p2point++;
+            player2point++;
         }
-
-        public void WonPoint(string player)
-        {
-            if (player == "player1")
-                P1Score();
-            else
-                P2Score();
-        }
-
     }
 }
 
