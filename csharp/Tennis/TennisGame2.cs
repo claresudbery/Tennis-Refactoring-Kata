@@ -44,14 +44,14 @@ namespace Tennis
         private Dictionary<ScoreWord, string> _pinklish_dictionary = new Dictionary<ScoreWord, string>()
         {
             {ScoreWord.Love,      "Like"},
-            {ScoreWord.All,       "All"},
-            {ScoreWord.Fifteen,   "Fifteen"},
-            {ScoreWord.Thirty,    "Thirty"},
-            {ScoreWord.Deuce,     "Deuce"},
-            {ScoreWord.Forty,     "Forty"},
-            {ScoreWord.Win,       "Win"},
-            {ScoreWord.For,       "for"},
-            {ScoreWord.Advantage, "Advantage"},
+            {ScoreWord.All,       "Any"},
+            {ScoreWord.Fifteen,   "Pipteen"},
+            {ScoreWord.Thirty,    "Flirty"},
+            {ScoreWord.Deuce,     "Juice"},
+            {ScoreWord.Forty,     "Party"},
+            {ScoreWord.Win,       "Wow"},
+            {ScoreWord.For,       "moo"},
+            {ScoreWord.Advantage, "Splinking"},
         };
 
         public TennisGame2(string player1Name, string player2Name, bool isPinklish = false)
@@ -74,7 +74,7 @@ namespace Tennis
                     score = Lookup(ScoreWord.Fifteen);
                 if (p1point == 2)
                     score = Lookup(ScoreWord.Thirty);
-                score += "-All";
+                score += $"-{Lookup(ScoreWord.All)}";
             }
             if (p1point == p2point && p1point > 2)
                 score = Lookup(ScoreWord.Deuce);
