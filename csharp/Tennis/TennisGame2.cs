@@ -103,11 +103,11 @@ namespace Tennis
 
             if (player1point >= 4 && player2point >= 0 && (player1point - player2point) >= 2)
             {
-                score = "Win for player1";
+                score = $"Win for {player1Name}";
             }
             if (player2point >= 4 && player1point >= 0 && (player2point - player1point) >= 2)
             {
-                score = "Win for player2";
+                score = $"Win for {player2Name}";
             }
             return score;
         }
