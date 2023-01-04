@@ -1,5 +1,21 @@
+using System;
+using System.Collections.Generic;
+
 namespace Tennis
 {
+    public enum ScoreWord
+    {
+        Love,
+        All,
+        Fifteen,
+        Thirty,
+        Deuce,
+        Forty,
+        Win,
+        For,
+        Advantage
+    }
+
     public class TennisGame2 : ITennisGame
     {
         private bool _is_pinklish;
@@ -11,6 +27,16 @@ namespace Tennis
         private string p2res = "";
         private string player1Name;
         private string player2Name;
+
+        private Dictionary<ScoreWord, string> _english_dictionary = new Dictionary<ScoreWord, string>()
+        {
+            {ScoreWord.Love,      "Love"}
+        };
+
+        private Dictionary<ScoreWord, string> _pinklish_dictionary = new Dictionary<ScoreWord, string>()
+        {
+            {ScoreWord.Love,      "Love"}
+        };
 
         public TennisGame2(string player1Name, string player2Name, bool isPinklish = false)
         {
@@ -106,6 +132,11 @@ namespace Tennis
                 score = "Win for player2";
             }
             return score;
+        }
+
+        private string Lookup(ScoreWord word)
+        {
+            return _is_pinklish ? _pinklish_dictionary[word] : _english_dictionary[word];
         }
 
         public void SetP1Score(int number)
