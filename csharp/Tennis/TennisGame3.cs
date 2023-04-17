@@ -2,41 +2,50 @@ namespace Tennis
 {
     public class TennisGame3 : ITennisGame
     {
-        private int p2;
-        private int p1;
-        private string p1N;
-        private string p2N;
+        private readonly Player _player1;
+        private readonly Player _player2;
 
         public TennisGame3(string player1Name, string player2Name)
         {
-            this.p1N = player1Name;
-            this.p2N = player2Name;
+            _player1 = new Player(player1Name);
+            _player2 = new Player(player2Name);
         }
 
         public string GetScore()
         {
             string s;
-            if ((p1 < 4 && p2 < 4) && (p1 + p2 < 6))
+            if ((_player1.Points < 4 && _player2.Points < 4) && (_player1.Points + _player2.Points < 6))
             {
-                string[] p = { "Love", "Fifteen", "Thirty", "Forty" };
-                s = p[p1];
-                return (p1 == p2) ? s + "-All" : s + "-" + p[p2];
+                return GetMidGameScore();
             }
             else
             {
-                if (p1 == p2)
+                if (_player1.Points == _player2.Points)
                     return "Deuce";
-                s = p1 > p2 ? p1N : p2N;
-                return ((p1 - p2) * (p1 - p2) == 1) ? "Advantage " + s : "Win for " + s;
+                s = _player1.Points > _player2.Points ? _player1.Name : _player2.Name;
+                return ((_player1.Points - _player2.Points) * (_player1.Points - _player2.Points) == 1) ? "Advantage " + s : "Win for " + s;
             }
+        }
+
+        private string GetMidGameScore()
+        {
+            return (_player1.Points == _player2.Points)
+                ? PointsToScore(_player1.Points) + "-All"
+                : PointsToScore(_player1.Points) + "-" + PointsToScore(_player2.Points);
+        }
+
+        private static string PointsToScore(int player1Points)
+        {
+            var points_to_score = new[] { "Love", "Fifteen", "Thirty", "Forty" };
+            return points_to_score[player1Points];
         }
 
         public void WonPoint(string playerName)
         {
             if (playerName == "player1")
-                this.p1 += 1;
+                _player1.Points += 1;
             else
-                this.p2 += 1;
+                _player2.Points += 1;
         }
 
     }
