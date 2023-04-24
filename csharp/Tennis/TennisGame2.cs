@@ -26,32 +26,6 @@ namespace Tennis
         private string player1Name;
         private string player2Name;
 
-        private Dictionary<ScoreWord, string> _english_dictionary = new Dictionary<ScoreWord, string>()
-        {
-            {ScoreWord.Love,      "Love"},      
-            {ScoreWord.All,       "All"},      
-            {ScoreWord.Fifteen,   "Fifteen"},       
-            {ScoreWord.Thirty,    "Thirty"},    
-            {ScoreWord.Deuce,     "Deuce"},    
-            {ScoreWord.Forty,     "Forty"},     
-            {ScoreWord.Win,       "Win"},       
-            {ScoreWord.For,       "for"},       
-            {ScoreWord.Advantage, "Advantage"},
-        };
-
-        private Dictionary<ScoreWord, string> _pinklish_dictionary = new Dictionary<ScoreWord, string>()
-        {
-            {ScoreWord.Love,      "Like"},
-            {ScoreWord.All,       "Any"},
-            {ScoreWord.Fifteen,   "Pipteen"},
-            {ScoreWord.Thirty,    "Flirty"},
-            {ScoreWord.Deuce,     "Juice"},
-            {ScoreWord.Forty,     "Party"},
-            {ScoreWord.Win,       "Wow"},
-            {ScoreWord.For,       "moo"},
-            {ScoreWord.Advantage, "Splinking"},
-        };
-
         public TennisGame2(string player1Name, string player2Name)
         {
             this.player1Name = player1Name;
@@ -185,6 +159,31 @@ namespace Tennis
                 P2Score();
         }
 
+        private Dictionary<ScoreWord, string> _english_dictionary = new Dictionary<ScoreWord, string>()
+        {
+            {ScoreWord.Love,      "Love"},      
+            {ScoreWord.All,       "All"},      
+            {ScoreWord.Fifteen,   "Fifteen"},       
+            {ScoreWord.Thirty,    "Thirty"},    
+            {ScoreWord.Deuce,     "Deuce"},    
+            {ScoreWord.Forty,     "Forty"},     
+            {ScoreWord.Win,       "Win"},       
+            {ScoreWord.For,       "for"},       
+            {ScoreWord.Advantage, "Advantage"},
+        };
+
+        private Dictionary<ScoreWord, string> _pinklish_dictionary = new Dictionary<ScoreWord, string>()
+        {
+            {ScoreWord.Love,      "Like"},
+            {ScoreWord.All,       "Any"},
+            {ScoreWord.Fifteen,   "Pipteen"},
+            {ScoreWord.Thirty,    "Flirty"},
+            {ScoreWord.Deuce,     "Juice"},
+            {ScoreWord.Forty,     "Party"},
+            {ScoreWord.Win,       "Wow"},
+            {ScoreWord.For,       "moo"},
+            {ScoreWord.Advantage, "Splinking"},
+        };
     }
 }
 
