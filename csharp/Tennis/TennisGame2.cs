@@ -18,8 +18,6 @@ namespace Tennis
 
     public class TennisGame2 : ITennisGame
     {
-        private bool _is_pinklish;
-
         private int p1point;
         private int p2point;
 
@@ -54,10 +52,8 @@ namespace Tennis
             {ScoreWord.Advantage, "Splinking"},
         };
 
-        public TennisGame2(string player1Name, string player2Name, bool isPinklish = false)
+        public TennisGame2(string player1Name, string player2Name)
         {
-            _is_pinklish = isPinklish;
-
             this.player1Name = player1Name;
             p1point = 0;
             this.player2Name = player2Name;
@@ -152,7 +148,7 @@ namespace Tennis
 
         private string Lookup(ScoreWord word)
         {
-            return _is_pinklish ? _pinklish_dictionary[word] : _english_dictionary[word];
+            return _english_dictionary[word];
         }
 
         public void SetP1Score(int number)

@@ -115,8 +115,8 @@ namespace Tennis.Tests
         [ClassData(typeof(PinklishTestDataGenerator))]
         public void Tennis2Test_Pinklish(int p1, int p2, string expectedEnglish, string expectedPinklish)
         {
-            var game = new TennisGame2("player1", "player2", isPinklish: true);
-            CheckAllScores(game, p1, p2, expectedPinklish);
+            var game = new TennisGame2("player1", "player2");
+            CheckAllScores(game, p1, p2, expectedEnglish);
         }
 
         [Theory]
