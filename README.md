@@ -6,23 +6,28 @@
 - `extract-method-demo` - Created for O'Reilly bootcamp
     - Shows the result of extracting methods in TennisGame1
 - `tbd-demo-1`
+    - Might only exist locally! Generally deleted after course.
     - Used during O'Reilly Refactoring for Continuous Delivery
     - The idea was that I have two different copies of the repo, to emulate two different pairs of devs
     - Each pair would push/pull to/from the same branch
     - In real life this would be `main`, but I'm deliberately keeping `main` clear in this fork
 - `main1`
+    - Might only exist locally! Generally deleted after course.
     - Created while demoing a TBD exercise during O'Reilly Refactoring for Continuous Delivery
     - The idea was that participants could keep switching between branches `main1` and `main2`
     - This would then emulate two pairs working on the same branch, without needing the extra overhead of two code bases and pushing to a server as I did with my `tbd-demo-1` demo (see above)
 - `main2`
+    - Might only exist locally! Generally deleted after course.
     - Created while demoing a TBD exercise during O'Reilly Refactoring for Continuous Delivery
     - See notes for `main1` above
 - `extract-methods`
+    - Might only exist locally! Generally deleted after course.
     - Created while demoing a merging exercise during O'Reilly Refactoring for Continuous Delivery
     - Participants were asked to create this branch and `rename-vars` (see below)
     - Did different things in each branch
     - The intention is that merging the two will be hard
 - `rename-vars`
+    - Might only exist locally! Generally deleted after course.
     - Created while demoing a merging exercise during O'Reilly Refactoring for Continuous Delivery
     - Participants were asked to create this branch and `extract-methods` (see above)
     - Did different things in each branch
