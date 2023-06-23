@@ -2,8 +2,9 @@ namespace Tennis
 {
     public class TennisGame3 : ITennisGame
     {
-        private int p2;
         private int p1;
+        private int p2;
+        
         private string p1N;
         private string p2N;
 
