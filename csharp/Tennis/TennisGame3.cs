@@ -16,7 +16,7 @@ namespace Tennis
 
         public string GetScore()
         {
-            if ((player1 < 4 && player2 < 4) && (player1 + player2 < 6))
+            if (InMiddleOfGame())
             {
                 string[] p = { "Love", "Fifteen", "Thirty", "Forty" };
                 var score = p[player1];
@@ -29,6 +29,11 @@ namespace Tennis
                 var score = player1 > player2 ? player1Name : player2Name;
                 return ((player1 - player2) * (player1 - player2) == 1) ? "Advantage " + score : "Win for " + score;
             }
+        }
+
+        private bool InMiddleOfGame()
+        {
+            return (player1 < 4 && player2 < 4) && (player1 + player2 < 6);
         }
 
         public void WonPoint(string playerName)
