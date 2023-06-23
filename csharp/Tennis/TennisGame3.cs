@@ -22,11 +22,16 @@ namespace Tennis
             }
             else
             {
-                if (player1 == player2)
-                    return "Deuce";
-                var score = player1 > player2 ? player1Name : player2Name;
-                return ((player1 - player2) * (player1 - player2) == 1) ? "Advantage " + score : "Win for " + score;
+                return GetDeuceOrAdvantageOrWinScore();
             }
+        }
+
+        private string GetDeuceOrAdvantageOrWinScore()
+        {
+            if (player1 == player2)
+                return "Deuce";
+            var score = player1 > player2 ? player1Name : player2Name;
+            return ((player1 - player2) * (player1 - player2) == 1) ? "Advantage " + score : "Win for " + score;
         }
 
         private string GetMidGameScore()
