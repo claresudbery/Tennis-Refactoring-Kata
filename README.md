@@ -1,3 +1,75 @@
+# Branches in this (Clare's) fork of this repo:
+
+- `extract-method` - Created for O'Reilly bootcamp
+    - Shows the result of extracting methods in TennisGame3
+    - See Tennis3-extract-method.mov (https://tinyurl.com/extract-method)
+- `extract-method-demo` - Created for O'Reilly bootcamp
+    - Shows the result of extracting methods in TennisGame1
+- `refactoring-with-resharper`
+    - has some extracted methods
+    - renamed vars
+    - also has Player class, which most of the other branches don't
+    - was presumably created while making Tennis3-Refactoring-With-Resharper.mp4 (see [coding videos](/organising/private/career/sudbery-software/coding-videos.md))
+- `resharper-demo-v2`
+    - has some extracted methods
+    - renamed vars
+    - also has Player class, which none of the other branches do
+    - v similar to `refactoring-with-resharper`
+    - I suspect I redid the demo, doing tings slightly differently
+- `mmmss-demo`
+    - Created for O'Reilly Refactoring 2
+    - Just has variable renaming in TennisGame2
+    - and methods moved around
+- `mmmss-demo-live-18-aug-22`
+    - Created during O'Reilly Refactoring 2, Aug '22
+    - has variable renaming in TennisGame2
+    - and methods moved around
+    - but also two constructors cos I was demoing backwards compatibility
+- `feature-flags-start`
+    - Starting point for adding an isPinklish flag to TennisGame2
+    - Was created for O'Reilly refactoring 2
+    - Gives participants a bit of a headstart by giving them test data
+    - In test file, `PinklishTestDataGenerator` is fully translated
+    - Flag has been introduced to TennisGame2, but no other code has been added or implemented
+- `feature-flags-demo-start`
+    - Starting point for adding an isPinklish flag to TennisGame2
+    - Currently (June '23) nearly same as `feature-flags-demo-partway` (apart from `PinklishTestDataGenerator`)
+    - I orginally created this for my use while doing demo in Refactoring Part 2 (O'Reilly)
+    - Flag has been introduced to TennisGame2
+    - Lookup function has been added
+    - English and Pinklish dictionaries both exist, but only contain one word each
+    - In test file, `PinklishTestDataGenerator` contains no translations
+- `feature-flags-demo-partway`
+    - Shows the result of starting to add an isPinklish flag to TennisGame2
+    - Flag has been introduced to TennisGame2
+    - Lookup function has been added
+    - English and Pinklish dictionaries both exist, but only contain one word each
+    - In test file, `PinklishTestDataGenerator` contains one translation (Love => Like)
+- `feature-flags-demo`
+    - Shows the result of adding an isPinklish flag to TennisGame2
+    - Fully implemented
+- `feature-flags-demo-finished`
+    - Shows the result of adding an isPinklish flag to TennisGame2
+    - Fully implemented
+    - Almost same as `feature-flags-demo`, but `PinklishWIPTestDataGenerator` has been removed from test file
+- `lift-up-conditional`
+    - Looks like I had a go at doing lift up conditional in TenisGame2
+    - See call to Temp()
+    - Doesn't look like I got very far though
+- `main1`
+    - Not sure about this. Might have been created when I had a TBD demo in mind, but then I never did anything with it?
+- `scratch-01`
+    - Presumably disposable, prob created during O'Reilly course
+    - Changed code is in TennisGame2
+    - Looks v similar to `mmmss-demo`
+- `when-to-refactor`
+    - Created during Siemens learning hour   
+    - TennisGame3 has renamed vars
+    - points_to_string array created
+    - One method extracted
+    - This is the code behind the video: Tennis-Refactoring-easier-to-understand-and-cheaper-to-modify
+        -  (see [coding videos](/organising/private/career/sudbery-software/coding-videos.md))
+
 # Tennis Refactoring Kata
 
 Imagine you work for a consultancy company, and one of your colleagues has been doing some work for the Tennis Society. The contract is for 10 hours billable work, and your colleague has spent 8.5 hours working on it. Unfortunately he has now fallen ill. He says he has completed the work, and the tests all pass. Your boss has asked you to take over from him. She wants you to spend an hour or so on the code so she can bill the client for the full 10 hours. She instructs you to tidy up the code a little and perhaps make some notes so you can give your colleague some feedback on his chosen design. You should also prepare to talk to your boss about the value of this refactoring work, over and above the extra billable hours.
