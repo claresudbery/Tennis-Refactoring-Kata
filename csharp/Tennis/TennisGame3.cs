@@ -18,9 +18,7 @@ namespace Tennis
         {
             if (InMiddleOfGame())
             {
-                string[] p = { "Love", "Fifteen", "Thirty", "Forty" };
-                var score = p[player1];
-                return (player1 == player2) ? score + "-All" : score + "-" + p[player2];
+                return GetMidGameScore();
             }
             else
             {
@@ -29,6 +27,13 @@ namespace Tennis
                 var score = player1 > player2 ? player1Name : player2Name;
                 return ((player1 - player2) * (player1 - player2) == 1) ? "Advantage " + score : "Win for " + score;
             }
+        }
+
+        private string GetMidGameScore()
+        {
+            string[] p = { "Love", "Fifteen", "Thirty", "Forty" };
+            var score = p[player1];
+            return (player1 == player2) ? score + "-All" : score + "-" + p[player2];
         }
 
         private bool InMiddleOfGame()
