@@ -17,6 +17,16 @@
 - `main2`
     - Created while demoing a TBD exercise during O'Reilly Refactoring for Continuous Delivery
     - See notes for `main1` above
+- `extract-methods`
+    - Created while demoing a merging exercise during O'Reilly Refactoring for Continuous Delivery
+    - Participants were asked to create this branch and `rename-vars` (see below)
+    - Did different things in each branch
+    - The intention is that merging the two will be hard
+- `rename-vars`
+    - Created while demoing a merging exercise during O'Reilly Refactoring for Continuous Delivery
+    - Participants were asked to create this branch and `extract-methods` (see above)
+    - Did different things in each branch
+    - The intention is that merging the two will be hard
 - `refactoring-with-resharper`
     - has some extracted methods
     - renamed vars
