@@ -5,6 +5,18 @@
     - See Tennis3-extract-method.mov (https://tinyurl.com/extract-method)
 - `extract-method-demo` - Created for O'Reilly bootcamp
     - Shows the result of extracting methods in TennisGame1
+- `tbd-demo-1`
+    - Used during O'Reilly Refactoring for Continuous Delivery
+    - The idea was that I have two different copies of the repo, to emulate two different pairs of devs
+    - Each pair would push/pull to/from the same branch
+    - In real life this would be `main`, but I'm deliberately keeping `main` clear in this fork
+- `main1`
+    - Created while demoing a TBD exercise during O'Reilly Refactoring for Continuous Delivery
+    - The idea was that participants could keep switching between branches `main1` and `main2`
+    - This would then emulate two pairs working on the same branch, without needing the extra overhead of two code bases and pushing to a server as I did with my `tbd-demo-1` demo (see above)
+- `main2`
+    - Created while demoing a TBD exercise during O'Reilly Refactoring for Continuous Delivery
+    - See notes for `main1` above
 - `refactoring-with-resharper`
     - has some extracted methods
     - renamed vars
@@ -56,8 +68,6 @@
     - Looks like I had a go at doing lift up conditional in TenisGame2
     - See call to Temp()
     - Doesn't look like I got very far though
-- `main1`
-    - Not sure about this. Might have been created when I had a TBD demo in mind, but then I never did anything with it?
 - `scratch-01`
     - Presumably disposable, prob created during O'Reilly course
     - Changed code is in TennisGame2
