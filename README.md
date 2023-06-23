@@ -47,6 +47,8 @@
     - Created for O'Reilly Refactoring 2
     - Just has variable renaming in TennisGame2
     - and methods moved around
+- `mmmss-demo-jun-23-23`
+    - Created during demo section of June '23 delivery of Refactoring for Continuous Delivery (O'Reilly)
 - `mmmss-demo-live-18-aug-22`
     - Created during O'Reilly Refactoring 2, Aug '22
     - has variable renaming in TennisGame2
