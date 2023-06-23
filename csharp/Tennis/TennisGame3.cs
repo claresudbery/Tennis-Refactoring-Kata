@@ -18,17 +18,15 @@ namespace Tennis
         {
             if ((player1 < 4 && player2 < 4) && (player1 + player2 < 6))
             {
-                string score;
                 string[] p = { "Love", "Fifteen", "Thirty", "Forty" };
-                score = p[player1];
+                var score = p[player1];
                 return (player1 == player2) ? score + "-All" : score + "-" + p[player2];
             }
             else
             {
-                string score;
                 if (player1 == player2)
                     return "Deuce";
-                score = player1 > player2 ? player1Name : player2Name;
+                var score = player1 > player2 ? player1Name : player2Name;
                 return ((player1 - player2) * (player1 - player2) == 1) ? "Advantage " + score : "Win for " + score;
             }
         }
