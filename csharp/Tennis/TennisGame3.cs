@@ -14,6 +14,12 @@ namespace Tennis
             this.player2Name = player2Name;
         }
 
+        public TennisGame3(string[] playerNames)
+        {
+            player1Name = playerNames[0];
+            player2Name = playerNames[1];
+        }
+
         public string GetScore()
         {
             if (InMiddleOfGame())
