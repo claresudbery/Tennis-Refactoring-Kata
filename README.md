@@ -81,6 +81,12 @@
     - Shows the result of adding an isPinklish flag to TennisGame2
     - Fully implemented
     - Almost same as `feature-flags-demo`, but `PinklishWIPTestDataGenerator` has been removed from test file
+- `parallel-change-scratch`
+    - Used in O'Reilly Quality Code bootcamp for the parallel change learning hour
+    - Used to demonstrate adding and keeping old and new constructor in parallel while migration completed 
+    - Based on `feature-flags-demo-finished`, which has an `isPinklish` flag added to `TennisGame2` constructor
+    - To create this branch I took the `isPinklish` flag away from the constructor
+    - The idea is I check out this branch for the demo, and add the flag back in again
 - `lift-up-conditional`
     - Looks like I had a go at doing lift up conditional in TenisGame2
     - See call to Temp()
