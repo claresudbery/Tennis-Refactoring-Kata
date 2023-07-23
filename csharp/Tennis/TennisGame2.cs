@@ -122,6 +122,7 @@ namespace Tennis
 
         private string Lookup(ScoreWord word)
         {
+            // return _isPinklish ? _pinklish_dictionary[word] : _english_dictionary[word];
             return _english_dictionary[word];
         }
 
