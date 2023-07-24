@@ -54,7 +54,7 @@ namespace Tennis
             {ScoreWord.Advantage, "Splinking"},
         };
 
-        public TennisGame2(string player1Name, string player2Name, bool isPinklish = false)
+        public TennisGame2(string player1Name, string player2Name, bool isPinklish)
         {
             _is_pinklish = isPinklish;
 
