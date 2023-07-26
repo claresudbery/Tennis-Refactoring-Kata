@@ -81,7 +81,7 @@
     - Shows the result of adding an isPinklish flag to TennisGame2
     - Fully implemented
     - Almost same as `feature-flags-demo`, but `PinklishWIPTestDataGenerator` has been removed from test file
-- `parallel-change-scratch`
+- `parallel-change-demo`
     - Used in O'Reilly Quality Code bootcamp for the parallel change learning hour
     - Used to demonstrate adding and keeping old and new constructor in parallel while migration completed 
     - Based on `feature-flags-demo-finished`, which has an `isPinklish` flag added to `TennisGame2` constructor
